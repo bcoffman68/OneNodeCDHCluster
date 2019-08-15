@@ -43,12 +43,10 @@ HADOOP_CONF_DIR   /etc/hadoop/conf/
 In order to access HDFS on the CDH cluster, you must specify the private IP of the HDFS service using the `-fs` option, eg:
 
 ```
-!hdfs dfs -fs hdfs://10.243.0.15:8020 -put my_file.txt /user/$HADOOP_USER_NAME
-!hdfs dfs -fs hdfs://10.243.0.15:8020 -ls
+!hdfs dfs -fs hdfs://<private-IP>:8020 -put my_file.txt /user/$HADOOP_USER_NAME
+!hdfs dfs -fs hdfs://<private-IP>:8020 -ls
 Found 1 items
 -rw-r--r--   1 admin admin     230996 2019-08-14 15:07 my_file.txt
 ```
 
 You won't be able to run Spark job out of CDSW for the moment.
-
-
